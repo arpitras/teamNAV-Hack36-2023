@@ -1,0 +1,72 @@
+.healthMap{
+    width : 300px;
+    height : 300px;
+}
+
+.guideLinesExplain{
+    width : 60%;
+    height : 400px;
+}
+
+a{
+  color : green;
+}
+
+/* .knapSack{
+    align-items: center;
+    display : flex;
+    justify-content: center;
+} */
+
+.helpLineNo{
+    margin : 20px;
+}
+
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+input {
+  font-family: "Poppins", sans-serif;
+}
+
+a:hover{
+  color : #e1ad01;
+}
+
+
+
+.sec {
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+  min-height: 70vh;
+  overflow: hidden;
+}
+
+/* .singh{
+
+} */
+
+.naman{
+  border-style: solid;
+  border-color: #333;
+}
+
+.near{
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 2.2rem;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+
+
