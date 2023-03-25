@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="google-signin-client_id"
+      content="17871838593-sk5hol3a6ki20mkkld28984psgmvtqrc.apps.googleusercontent.com
+    "
+    />
+    <script
+      src="https://kit.fontawesome.com/64d58efce2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <link rel="stylesheet" href="stylleMyHost_N.css" />
+    <title>Forget-Password</title>
+  </head>
+  <body>
+    <div class="container">
+        <div class="forms-container">
+          <div class="Host-Meet">
+            <form action="/forgot" method="post"  class="Host-Meet-form">
+              <h2 class="title">Reset your Password</h2>
+              <% if(typeof message !== 'undefined'){ %>
+
+                <h3 style="color: red"><%= message %></h3>
+                <% } %>
+              <div class="input-field">
+                  <i class="fa fa-envelope"></i>
+                <input type="email" name="E-mail" placeholder="E-mail" />
+              </div>
+              <form action="#">
+              <input type="submit" value="Send reset link" class="btn solid" />
+              
+               </form>
+            </form>
+          </div>
+        </div>
+
+
+
+  </body>
+</html>
