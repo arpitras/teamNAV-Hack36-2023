@@ -6,12 +6,13 @@ import { Link } from "react-router-dom";
 import Typewriter from "typewriter-effect";
 import "../components/StyleAutoTyping.css";
 import "../components/Navbar.css";
-import "../components/Navbar.css";
-import "../components/Navbar.css";
+
+import Chat from "../components/Chat";
 function Home() {
   return (
     <div className="home">
       <Projects />
+      <Chat></Chat>
       <div class="container con1">
         <div className="auto-text">
           <Typewriter
