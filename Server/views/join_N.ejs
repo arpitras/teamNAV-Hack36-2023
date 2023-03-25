@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="google-signin-client_id" content="17871838593-sk5hol3a6ki20mkkld28984psgmvtqrc.apps.googleusercontent.com
+    " />
+  <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <link rel="stylesheet" href="stylleMyHost_N.css">
+  <title>Join Room</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="forms-container">
+      <div class="Host-Meet">
+        <form action="/room" method="post" class="Host-Meet-form">
+          <h2 class="title">Join a Room</h2>
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input type="text" name="Name" placeholder="Name" />
+          </div>
+          <div class="input-field">
+            <i class="fas fa-key"></i>
+            <input type="text" name="roomID" placeholder="Room Id" />
+          </div>
+          <div class="controls">
+            <a href="#" class="control-icon main__controls__button main__video_button">
+              <i class="fas fa-video"></i>
+            </a>
+            <a href="#" class="control-icon">
+              <i class="fa fa-microphone"></i>
+            </a>
+          </div>
+
+
+          <input type="submit" value="Enter" onclick={hello()} class="btn solid" />
+        </form>
+          <!-- <form action="http://localhost:3000/meet">
+          </form> -->
+          <div>
+            <!-- <form action="/createNew" method="post">
+              <button type="submit" class="refer-btn" name="submit">Create a new room </button>
+            </form> -->
+          </div>
+      </div>
+      <!-- <p style = "color: #F5EA5A;">or, Enter in new Room </p> -->
+
+
+      <!-- <div>
+             <form action="/createNew" method ="post">
+              <button type="submit" name="submit">Enter i a new room </button>
+            </form> 
+          </div> -->
+
+    </div>
+    <img src="join.svg" class="host-img" alt="">
+  </div>
+  <script src="server.js"></script>
+</body>
+
+</html>
