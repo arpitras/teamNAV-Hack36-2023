@@ -14,10 +14,10 @@ const Footer = () => {
                 <div className="footer-text-center">
                     <h4>&copy; 2023 TEAM NAV</h4>
                 </div>
-                <div className="arrow-up">
+                {/* <div className="arrow-up">
                     <a href="#project"><img src={FooterArrow} className="footer-arrow" alt="69"/> </a>
 
-                </div>
+                </div> */}
                 
             </div>
             
