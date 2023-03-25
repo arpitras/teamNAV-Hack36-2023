@@ -21,7 +21,12 @@ const userSchema = mongoose.Schema({
     token:{
         type:String,
         default:''
+<<<<<<< HEAD
     }
+=======
+    },
+    meetings:[]
+>>>>>>> 6a7eb66a7d91842f10c46e0e87c2e3d6cad983c9
 })
 
 const User = mongoose.model("User",userSchema);
