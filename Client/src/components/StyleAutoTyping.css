@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap');
+
+
+.con1{
+    width : 44%;
+    height : 30vh;
+    background: transparent;
+    color : rgba(8, 8, 8, 0.776);
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+
+.con2{
+    width : 100%;
+    height : 50vh;
+    background: transparent;
+    color : black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.btn {
+    width: 150px;
+    background-color: black;
+    border: none;
+    outline: none;
+    height: 49px;
+    border-radius: 49px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: 0.5s;
+   
+  }
+
+  .btn:hover{
+    background-color: #1F8A70;
+  }
+
+  .btn1{
+    width: 250px;
+    background-color: black;
+    border: none;
+    outline: none;
+    height: 49px;
+    border-radius: 49px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: 0.5s
+  }
+
+  .btn1:hover{
+    background-color: #1F8A70;
+  }
+
+  .btn56 {
+    width: 200px;
+    background-color: black;
+    border: none;
+    outline: none;
+    height: 49px;
+    border-radius: 49px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: 0.5s;
+   
+  }
+
+  .btn56:hover{
+    background-color: #1F8A70;
+  }
+
+.auto-text{
+    font-size : 40px;
+    font-weight : 600;
+    /* font-family: 'Poppins', sans-serif; */
+}
+
+.para{
+    font-weight: 200;
+    font-size : 18px;
+    font-family: 'Lora', serif;
+}
+
+.image-depressed{
+    width : 280px;
+    transform: scaleX(-1);
+    margin-bottom: 10px;
+    border-radius: 15%;
+}
