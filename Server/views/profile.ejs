@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="profile.css">
+</head>
+<style>
+    * {
+        font-family: sans-serif;
+    }
+
+    /* body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    } */
+
+    .center {
+        text-align: center;
+        margin-bottom: 35px;
+    }
+
+    .table-div {
+        margin: 51px;
+    }
+
+    .content-table {
+        border-collapse: collapse;
+        margin: 25px;
+        font-size: 20px;
+        min-width: 500px;
+        border-radius: 18px 18px 0 0;
+        overflow: hidden;
+        box-shadow: 0 0 51px rgb(0 0 0 / 25%)
+    }
+
+    .content-table thead tr {
+        text-align: left;
+        background-color: #009879;
+        color: white;
+    }
+
+    .content-table th,
+    .content-table td {
+        padding: 15px 20px;
+    }
+
+    .content-table tbody tr {
+        border-bottom: 1px solid gray;
+    }
+
+    .content-table tr:nth-of-type(even) {
+        background-color: #80808040;
+    }
+
+    .content-table tr:last-of-type {
+        border-bottom: 2px solid #009879;
+    }
+
+    .content-table tbody td a {
+        text-decoration: none;
+        cursor: pointer;
+        color: black;
+    }
+
+    .underline {
+        text-decoration: underline;
+    }
+</style>
+
+
+<body>
+    <div class="body-student student-profile py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-transparent text-center">
+                            <h3>
+                                <%= user.username %>
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <!-- <p class="mb-0"><strong class="pr-1">Username:</strong><%= user.username %></p> -->
+                            <!-- <p class="mb-0"><strong class="pr-1">Class:</strong>4</p>
+                  <p class="mb-0"><strong class="pr-1">Section:</strong>A</p> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-transparent border-0">
+                            <h3 class="mb-0"><i class="far fa-clone pr-1"></i>User Information: <a href="#"> <i
+                                        class="pencil fa-solid fa-pencil"></i> </a> </h3>
+                        </div>
+                        <div class="card-body pt-0">
+                            <table class="table table-bordered">
+                                <tr>
+                                    <th width="30%">Username:</th>
+                                    <td width="2%">:</td>
+                                    <td>
+                                        <%= user.username %>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th width="30%">Email:</th>
+                                    <td width="2%">:</td>
+                                    <td>
+                                        <%= user.email %>
+                                    </td>
+                                </tr>
+
+
+
+                            </table>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class = "btn-box">
+    <button class = "btn11"><a href="http://localhost:3000" class="logout">Logout</a></button>
+</div>
+
+    <div class="table-div">
+        <h2 class="account-heading center">Past Meetings</h2>
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>Serial No.</th>
+                    <th>Date posted</th>
+                    <th> Time </th>
+                </tr>
+            </thead>
+
+            <tbody>
+             
+                <% for(var i=0;i<user.meetings.length ;i++){ %>
+                    <tr>
+                        <td>
+                            <%= i+1 %>
+                        </td>
+                        <td>
+                            <%= user.meetings[i].date %>
+                        </td>
+                        <td>
+                            <%= user.meetings[i].time %>
+                        </td>
+                    </tr>
+                    <% } %>
+
+
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="table-div">
+        <h2>Create a note</h2>
+        <form action="/profile" method="post" enctype="multipart/form-data">
+            <div class="control-group">
+                <div class="form-group floating-label-form-group controls">
+                    <label>Title</label>
+                    <input type="text" name="title" placeholder="Title" class="form-control">
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="form-group floating-label-form-group controls">
+                    <label>Description</label>
+                    <input type="text" name="description" placeholder="Description" required class="form-control">
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="form-group floating-label-form-group controls">
+                    <label>Content</label>
+                    <textarea name="content" required placeholder="Content ..." cols="30" rows="10"
+                        class="form-control"></textarea>
+                </div>
+            </div>
+            <div class="form-group my-4 text-center">
+                <a href="/join_N" class="btn btn-secondary">Cancel</a>
+                <input type="submit" value="Submit" class="btn btn-primary btn-xl">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
