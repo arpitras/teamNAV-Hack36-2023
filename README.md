@@ -25,6 +25,7 @@
   4) Node.js
   5) Socket.IO
   6) Dialogflow
+  7) Google Maps API
   
 
 ## Contributors:
