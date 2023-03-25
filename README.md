@@ -10,7 +10,7 @@
   Brief description of the project
   
 ## Demo Video Link:
-  <a href="https://youtu.be/EC--WtOMFIc"</a>
+  <a href="https://youtu.be/EC--WtOMFIc">https://youtu.be/EC--WtOMFIc</a>
   
 ## Presentation Link:
   <a href=""> PPT link here </a>
