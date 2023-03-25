@@ -7,7 +7,7 @@
 
 
 ## Introduction:
-  Brief description of the project
+  We have tried to solve the mental health issues of JEE and NEET aspirants free of cost, by providing them a 24X7 bot that specialises in mental health problem solving, there is a quiz whose score and analysis can give user idea about their mental health. There is an integrated Map feature which specially shows therapists near the user based on the user. Moreover there is an option of video chat integrated with the notes app to provide 1:1 mentorship by experts.
   
 ## Demo Video Link:
   <a href="https://youtu.be/EC--WtOMFIc">https://youtu.be/EC--WtOMFIc</a>
