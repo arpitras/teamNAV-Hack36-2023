@@ -56,14 +56,14 @@ const securePassword = async (password) => {
   }
 };
 
-app.get("/", (req, res) => {
+app.get("/", auth.isLogout, (req, res) => {
   // res.redirect(`/${uuidV4()}`)
   //req.session.error = '';
-  res.render("login_N.ejs");
+  res.render("login_N");
 });
 
 app.post("/createNew", function (req, res) {
-  res.render("Host_N.ejs");
+  res.render("Host_N");
 });
 
 app.post("/joinmeet", function (req, res) {
@@ -122,8 +122,13 @@ app.get("/verify", async (req, res) => {
   }
 });
 
-app.get("/login", auth.isLogout, (req, res) => {
-  res.render("login_N");
+app.get("/login",function (req, res) {
+  try {
+    res.render("login_N");
+
+  } catch (error) {
+    console.log(error.message);
+  }
 });
 
 app.post("/login", async (req, res) => {
@@ -143,14 +148,14 @@ app.post("/login", async (req, res) => {
       minSymbols: 1
     };
 
-    const usere = await User.findOne({email:req.body.email}); 
-    const usere2 = await User.findOne({username:req.body.username});
+    const usere = await User.findOne({ email: req.body.email });
+    const usere2 = await User.findOne({ username: req.body.username });
 
-    if(usere2){
+    if (usere2) {
       res.render("login_N", { message: "This username already exists" });
     }
 
-    else if(usere){
+    else if (usere) {
       res.render("login_N", { message: "This email already exists" });
     }
 
@@ -159,7 +164,7 @@ app.post("/login", async (req, res) => {
     }
 
     else if (!validator.isStrongPassword(req.body.password, options)) {
-      res.render("login_N",{message:"Please enter a strong password with at least 8 characters, 1 lowercase letter, 1 uppercase letter, 1 number, and 1 symbol"});
+      res.render("login_N", { message: "Please enter a strong password with at least 8 characters, 1 lowercase letter, 1 uppercase letter, 1 number, and 1 symbol" });
     }
     else {
 
@@ -181,7 +186,7 @@ app.post("/login", async (req, res) => {
   }
 });
 
-app.get("/signin",auth.isLogin,(req,res)=>{
+app.get("/signin", auth.isLogin, (req, res) => {
   res.render(("join_N"));
 })
 
@@ -198,7 +203,7 @@ app.post("/signin", async (req, res) => {
           res.render("login_N", { message: "Please verify your email first" });
         } else {
           req.session.user = userData._id;
-          res.redirect("join_N.ejs");
+          res.redirect("join_N");
         }
       } else {
         res.render("login_N", { message: "Invalid login details" });
@@ -212,11 +217,11 @@ app.post("/signin", async (req, res) => {
 });
 
 
-app.get("/join_N",auth.isLogin,(req,res)=>{
+app.get("/join_N", auth.isLogin, (req, res) => {
   res.render("join_N");
 })
 
-app.get("/joinmeet",auth.isLogin,(req,res)=>{
+app.get("/joinmeet", auth.isLogin, (req, res) => {
   res.redirect("/join_N");
 })
 
@@ -265,6 +270,13 @@ const sendResetMail = async (username, email, token) => {
     console.log(error);
   }
 };
+
+app.get("/profile", auth.isLogin,async function (req, res) {
+  user_id = req.session.user;
+  const userData = await User.findOne({ _id: user_id });
+  res.render("profile", { user: userData });
+})
+
 
 app.get("/verification", async (req, res) => {
   res.render("verification");
@@ -363,11 +375,23 @@ app.post("/fa93aee1-f54a-494a-9423-41814a1717f7", function (req, res) {
 //   }
 // })
 
-app.post("/room.ejs", function (req, res) {
+app.post("/room",async  function (req, res) {
   console.log("running");
   let name = req.body.name;
   let roomId = req.body.roomID;
   console.log(roomId);
+  const user_id = req.session.user;
+  const userData = await User.findOne({_id:user_id});
+  var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+
+today = mm + '/' + dd + '/' + yyyy;
+await userData.meetings.push(today);
+console.log(userData);
+console.log(userData.meetings.length);
+
   res.redirect(`/${roomId}`);
 });
 
